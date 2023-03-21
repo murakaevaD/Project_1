@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.login = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(213)))), ((int)(((byte)(174)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.login);
@@ -62,25 +62,33 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // button1
+            // buttonLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(205)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(133, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(253, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(205)))));
+            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(205)))));
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(171)))), ((int)(((byte)(134)))));
+            this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(201)))));
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLogin.Location = new System.Drawing.Point(133, 391);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(253, 48);
+            this.buttonLogin.TabIndex = 5;
+            this.buttonLogin.Text = "Войти";
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // password
             // 
             this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(201)))));
+            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.password.Location = new System.Drawing.Point(148, 287);
+            this.password.Location = new System.Drawing.Point(148, 275);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(266, 53);
+            this.password.Size = new System.Drawing.Size(266, 46);
             this.password.TabIndex = 4;
             this.password.UseSystemPasswordChar = true;
             // 
@@ -97,12 +105,13 @@
             // login
             // 
             this.login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(201)))));
+            this.login.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.login.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.login.Location = new System.Drawing.Point(148, 174);
+            this.login.Location = new System.Drawing.Point(148, 164);
             this.login.Multiline = true;
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(266, 49);
+            this.login.Size = new System.Drawing.Size(266, 59);
             this.login.TabIndex = 2;
             // 
             // pictureBox1
@@ -125,6 +134,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(524, 82);
             this.panel2.TabIndex = 0;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
             // exit
             // 
@@ -137,6 +148,8 @@
             this.exit.TabIndex = 1;
             this.exit.Text = "x";
             this.exit.Click += new System.EventHandler(this.exit_Click);
+            this.exit.MouseEnter += new System.EventHandler(this.exit_MouseEnter);
+            this.exit.MouseLeave += new System.EventHandler(this.exit_MouseLeave);
             // 
             // label1
             // 
@@ -177,7 +190,7 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox login;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLogin;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label exit;
     }
