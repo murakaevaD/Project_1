@@ -91,7 +91,7 @@ namespace Project_1
                 menu.Show();
             }
             else
-                MessageBox.Show("Учетная запись не найдена");
+                MessageBox.Show("Учетная запись не найдена ");
         }
 
         private void reg_Click(object sender, EventArgs e)
