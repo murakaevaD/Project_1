@@ -23,7 +23,7 @@ namespace Project_1
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
 
@@ -85,9 +85,20 @@ namespace Project_1
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("Вы авторизованы");
+            {
+                this.Hide();
+                Menu menu = new Menu();
+                menu.Show();
+            }
             else
                 MessageBox.Show("Учетная запись не найдена");
+        }
+
+        private void reg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registration registration = new Registration();
+            registration.Show();
         }
     }
 }

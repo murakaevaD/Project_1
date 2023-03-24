@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reg = new System.Windows.Forms.Label();
+            this.noak = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,6 +50,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(213)))), ((int)(((byte)(174)))));
+            this.panel1.Controls.Add(this.reg);
+            this.panel1.Controls.Add(this.noak);
             this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -61,6 +65,28 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // reg
+            // 
+            this.reg.AutoSize = true;
+            this.reg.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.reg.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.reg.Location = new System.Drawing.Point(240, 464);
+            this.reg.Name = "reg";
+            this.reg.Size = new System.Drawing.Size(175, 22);
+            this.reg.TabIndex = 7;
+            this.reg.Text = "Зарегестрируйтесь.";
+            this.reg.Click += new System.EventHandler(this.reg_Click);
+            // 
+            // noak
+            // 
+            this.noak.AutoSize = true;
+            this.noak.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.noak.Location = new System.Drawing.Point(103, 464);
+            this.noak.Name = "noak";
+            this.noak.Size = new System.Drawing.Size(131, 22);
+            this.noak.TabIndex = 6;
+            this.noak.Text = "Нет аккаунта?";
             // 
             // buttonLogin
             // 
@@ -193,5 +219,7 @@
         private System.Windows.Forms.Button buttonLogin;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label exit;
+        private System.Windows.Forms.Label reg;
+        private System.Windows.Forms.Label noak;
     }
 }
