@@ -77,6 +77,7 @@
             this.reg.TabIndex = 7;
             this.reg.Text = "Зарегестрируйтесь.";
             this.reg.Click += new System.EventHandler(this.reg_Click);
+            this.reg.MouseEnter += new System.EventHandler(this.reg_MouseEnter);
             // 
             // noak
             // 
@@ -139,6 +140,8 @@
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(266, 59);
             this.login.TabIndex = 2;
+            this.login.Enter += new System.EventHandler(this.login_Enter);
+            this.login.Leave += new System.EventHandler(this.login_Leave);
             // 
             // pictureBox1
             // 
@@ -213,13 +216,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox login;
         private System.Windows.Forms.Button buttonLogin;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label exit;
         private System.Windows.Forms.Label reg;
         private System.Windows.Forms.Label noak;
+        public System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox login;
     }
 }

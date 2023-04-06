@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project_1
 {
@@ -20,6 +21,7 @@ namespace Project_1
             this.password.AutoSize = false;
             this.password.Size = new Size(this.password.Size.Width,49);
         }
+
 
         private void exit_Click(object sender, EventArgs e)
         {
@@ -68,6 +70,20 @@ namespace Project_1
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+
+            if (login.Text == "")
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+            if (password.Text == "")
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+
+
+
             String loginUser = login.Text;
             String passUser = password.Text;
 
@@ -87,18 +103,45 @@ namespace Project_1
             if (table.Rows.Count > 0)
             {
                 this.Hide();
-                Menu menu = new Menu();
+                string lg = login.Text;
+                Menu menu = new Menu(lg);
                 menu.Show();
+
             }
             else
                 MessageBox.Show("Учетная запись не найдена ");
+
+
+        }
+        private void login_Enter(object sender, EventArgs e)
+        {
+            if (login.Text == "Введите логин")
+            {
+                login.Text = "";
+                login.ForeColor = Color.Black;
+            }
         }
 
+        private void login_Leave(object sender, EventArgs e)
+        {
+            if (login.Text == "")
+            {
+                login.Text = "Введите логин";
+                login.ForeColor = Color.Gray;
+            }
+        }
         private void reg_Click(object sender, EventArgs e)
         {
             this.Hide();
             Registration registration = new Registration();
+
             registration.Show();
+
+        }
+
+        private void reg_MouseEnter(object sender, EventArgs e)
+        {
+            reg.ForeColor = Color.DarkSlateBlue;
         }
     }
 }
